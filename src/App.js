@@ -1,16 +1,26 @@
 import './App.css';
-import {BrowserRoute as Router , Route , Routes} from 'react-router-dom'
+import {BrowserRouter  , Route , Routes} from 'react-router-dom'
+import Home from './components/Home';
+import Cart from './components/Cart';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div className="App">
-    <Router>
-    <Routes> 
-    <Route> </Route>
-    </Routes>
 
-    </Router>
-      <h1>hellow orld</h1>
+    <BrowserRouter >
+    <Navbar/>
+      <Routes>
+      {/* <Route path='/cart/:id' element={<Cart />}> Home</Route> */}
+
+        <Route path='/cart' element={<Cart />}> Home</Route>
+        <Route path='/' element={<Home />}> Home</Route>
+
+      </Routes>
+    </BrowserRouter>
+ 
+ 
+     
     </div>
   );
 }
