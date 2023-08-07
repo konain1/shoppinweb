@@ -26,6 +26,7 @@ function Navbar() {
         </svg>
 
         <span className="bag-quantity">
+        
         <span>3</span>
 
         </span>

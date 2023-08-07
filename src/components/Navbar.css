@@ -7,4 +7,31 @@
     background-color: black;
     grid-template-columns: 1fr 0.1fr;
     padding: 0 20px;
+    align-items: center;
 }
+.nav-bar h1{
+    font-size: 40px;
+}
+.nav-bag {
+    display: flex;
+    align-items: center;
+}
+
+.bag-quantity{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    margin: 0 10px;
+    color: white;
+
+
+
+ }
+
+ a {
+    text-decoration: none;
+    color: white;
+ }
