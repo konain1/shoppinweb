@@ -3,6 +3,7 @@ import {BrowserRouter  , Route , Routes} from 'react-router-dom'
 import Home from './components/Home';
 import Cart from './components/Cart';
 import Navbar from './components/Navbar';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -14,7 +15,11 @@ function App() {
       {/* <Route path='/cart/:id' element={<Cart />}> Home</Route> */}
 
         <Route path='/cart' element={<Cart />}> Home</Route>
-        <Route path='/' element={<Home />}> Home</Route>
+        <Route path='/' exact element={<Home />}> Home</Route>
+        <Route path='*' element={<NotFound/>}> Home</Route>
+        
+
+
 
       </Routes>
     </BrowserRouter>
