@@ -15,4 +15,11 @@ app.get('/',(req,res)=>{
 })
 
 
-app.listen(5001)
+app.get('/product',(req,res)=>{
+    res.send([1,2,3])
+})
+
+const port  = process.env.PORT || 5001
+
+
+app.listen(port,console.log(`server running on ${port}`))
