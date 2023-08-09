@@ -18,7 +18,7 @@ function App() {
         <Route path='/' exact element={<Home />}> Home</Route>
         <Route path='*' element={<NotFound/>}> Home</Route>
         
-
+    {/* nothing to worry */}
 
 
       </Routes>
