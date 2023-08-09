@@ -1,7 +1,7 @@
 
 
 import {configureStore} from '@reduxjs/toolkit'
-import productReducer from '../features/productSlice';
+import productReducer , {productFetch} from '../features/productSlice';
 
 const store = configureStore({
 
@@ -9,5 +9,7 @@ const store = configureStore({
         products:productReducer
     }
 })
+
+store.dispatch(productFetch())
 
 export default store;
