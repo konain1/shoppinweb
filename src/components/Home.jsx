@@ -1,13 +1,23 @@
 
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import {useGetAllProductsQuery} from './../features/productApi'
- 
+import {addToCart } from '../features/cartSlice'
+  
 function Home() {
 
   const {data,error,isLoading} = useGetAllProductsQuery()
-  console.log(data)
-  const selected = useSelector((state)=> state.products.items )
+  const dispatch = useDispatch()
+
+  const addtoCartHandler = (product) =>{
+
+    dispatch(addToCart(product))
+
+  }
+
+  // console.log(data)
+  // const selected = useSelector((state)=> state.products.items )
 
   return (
 
@@ -54,7 +64,7 @@ function Home() {
           <div className='details'> <span>{item.desc}</span> <br></br>
           <span>Price : {item.price}</span>
           </div>
-          <button> add to cart  </button>
+          <button onClick={()=> addtoCartHandler(item)}> add to cart  </button>
            </div>
           </>
         )
