@@ -1,16 +1,18 @@
 
 import React from 'react'
 import { useSelector } from 'react-redux'
-
+import {useGetAllProductsQuery} from './../features/productApi'
+ 
 function Home() {
 
-  const selected = useSelector((state)=> state.products.items)
+  const {data,error,isLoading} = useGetAllProductsQuery()
+  console.log(data)
+  const selected = useSelector((state)=> state.products.items )
 
-  console.log(selected)
   return (
 
     <>
-  <div style={{display:'flex'}}>
+  {/* <div style={{display:'flex'}}>
 
   
     {
@@ -29,7 +31,37 @@ function Home() {
       })
     }
 
-  </div>
+  </div> */}
+
+
+
+
+  {/* 2nd method to fetch data */}
+
+
+
+    <div className='home-container'> 
+
+    {isLoading ? <p>loading .......</p> :  error ? <p>error occured </p> :  <>
+
+    <div className='products'> {data?.map((item,index)=>{
+
+        return(
+          <>
+
+          <div className='product'> <h3>{item.name}</h3>
+          <img src={item.image} alt={item.name} />
+          <div className='details'> <span>{item.desc}</span> <br></br>
+          <span>Price : {item.price}</span>
+          </div>
+          <button> add to cart  </button>
+           </div>
+          </>
+        )
+    })}</div>
+
+    </>}
+    </div>
     </>
    
   )

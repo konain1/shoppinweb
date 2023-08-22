@@ -5,3 +5,32 @@
   margin:0;
   box-sizing: border-box;
 }
+
+.products {
+  display: flex;
+  justify-content: space-between;  
+  margin-top: 30px;
+  align-items: center ;
+}
+
+.product {
+  /* border: 1px solid grey; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+.product button {
+  width: 100px;
+  height: 20px;
+  margin-top: 10px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+img {
+  height: 600px;
+  width: 400px;
+}
